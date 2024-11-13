@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İngilizce Öğreniyorum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">İngilizce Öğreniyorum</h1>
+        
+        <div id="categorySelection" class="category-selection">
+            <h2>Kategori Seç</h2>
+            <div class="category-buttons">
+                <button onclick="startCategory('words')" class="category-btn">
+                    <span class="category-icon">📚</span>
+                    Kelimeler
+                </button>
+                <button onclick="startCategory('spelling')" class="category-btn">
+                    <span class="category-icon">✍️</span>
+                    Yazım
+                </button>
+                <button onclick="startCategory('speaking')" class="category-btn">
+                    <span class="category-icon">🗣️</span>
+                    Konuşma
+                </button>
+            </div>
+            <button id="showScoreboard" onclick="showScoreboard()" class="scoreboard-btn">
+                Skor Tablosu
+            </button>
+        </div>
+
+        <div id="scoreboard" class="scoreboard" style="display: none;">
+            <h2>Yüksek Skorlar</h2>
+            <div id="scoreList" class="score-list"></div>
+            <button onclick="hideScoreboard()" class="close-btn">Kapat</button>
+        </div>
+
+        <div id="quizContainer" class="quiz-container" style="display: none;">
+            <div class="timer-container">
+                <div id="timer" class="timer">15</div>
+            </div>
+
+            <div class="question-container">
+                <p id="question" class="question"></p>
+                <div id="options" class="options"></div>
+            </div>
+
+            <div class="progress">
+                <p class="progress-text">
+                    Soru <span id="currentQuestion">1</span> / <span id="totalQuestions">30</span>
+                </p>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p class="score-text">Puan: <span id="currentScore">0</span></p>
+            </div>
+
+            <div class="control-buttons">
+                <button id="endGameBtn" onclick="endGame()" class="end-game-btn">Oyunu Bitir</button>
+                <button id="languageBtn" onclick="toggleLanguage()" class="language-btn">Switch to English</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
